@@ -479,3 +479,15 @@ img{max-width:100%;height:auto}
   .aerial-video-feature{grid-template-columns:1fr;}
   .residential-video-frame{width:min(82vw,360px);}
 }
+
+/* Expanded 14-photo aerial portfolio */
+.aerial-photo-grid .aerial-photo:nth-child(10),
+.aerial-photo-grid .aerial-photo:nth-child(14){grid-column:span 8}
+@media(max-width:900px){
+  .aerial-photo-grid .aerial-photo:nth-child(10),
+  .aerial-photo-grid .aerial-photo:nth-child(14){grid-column:span 2}
+}
+@media(max-width:620px){
+  .aerial-photo-grid .aerial-photo:nth-child(10),
+  .aerial-photo-grid .aerial-photo:nth-child(14){grid-column:1}
+}
