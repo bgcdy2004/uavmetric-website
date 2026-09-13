@@ -480,72 +480,14 @@ img{max-width:100%;height:auto}
   .residential-video-frame{width:min(82vw,360px);}
 }
 
-
-/* Walk Street logo lock — use approved UAVMetric PNG at controlled proportions */
-.case-study-page .walk-brand{
-  display:flex;
-  align-items:center;
-  flex:0 0 auto;
-  width:250px;
-  height:72px;
-}
-.case-study-page .walk-brand img{
-  display:block;
-  width:250px;
-  max-width:100%;
-  height:auto;
-  max-height:72px;
-  object-fit:contain;
-  object-position:left center;
-  filter:drop-shadow(0 4px 16px rgba(0,153,255,.15));
-}
-.case-study-page .footer-grid{
-  position:relative;
-  z-index:2;
-  display:grid;
-  grid-template-columns:220px 1fr auto;
-  gap:32px;
-  align-items:center;
-}
-.case-study-page .walk-footer-logo{
-  width:210px;
-}
-.case-study-page .walk-footer-logo img{
-  display:block;
-  width:210px;
-  height:auto;
-  object-fit:contain;
-}
-.case-study-page .footer-grid>div:not(.walk-footer-logo){
-  display:grid;
-  gap:4px;
-}
-.case-study-page .footer-grid span{
-  color:#8094a4;
-  font-size:.82rem;
-}
-.case-study-page .footer-bottom{
-  position:relative;
-  z-index:2;
-  margin-top:22px;
-  padding-top:18px;
-  border-top:1px solid rgba(255,255,255,.07);
-  color:#718594;
-  font-size:.78rem;
-}
+/* Expanded 14-photo aerial portfolio */
+.aerial-photo-grid .aerial-photo:nth-child(10),
+.aerial-photo-grid .aerial-photo:nth-child(14){grid-column:span 8}
 @media(max-width:900px){
-  .case-study-page .footer-grid{
-    grid-template-columns:1fr;
-    align-items:start;
-  }
+  .aerial-photo-grid .aerial-photo:nth-child(10),
+  .aerial-photo-grid .aerial-photo:nth-child(14){grid-column:span 2}
 }
-@media(max-width:600px){
-  .case-study-page .walk-brand{
-    width:190px;
-    height:62px;
-  }
-  .case-study-page .walk-brand img{
-    width:190px;
-    max-height:62px;
-  }
+@media(max-width:620px){
+  .aerial-photo-grid .aerial-photo:nth-child(10),
+  .aerial-photo-grid .aerial-photo:nth-child(14){grid-column:1}
 }
