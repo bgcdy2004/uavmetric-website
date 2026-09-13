@@ -318,3 +318,10 @@ img{max-width:100%;height:auto}
 .thank-you-card p{color:#aebfcb;line-height:1.75;max-width:650px}
 .thank-you-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
 @media(max-width:600px){.thank-you-card{padding:30px 22px}}
+
+.footer-logo {
+  display: block;
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+}
