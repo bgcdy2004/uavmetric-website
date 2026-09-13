@@ -7,5 +7,15 @@
     "directory": "./public",
     "binding": "ASSETS",
     "not_found_handling": "404-page"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "uavmetric.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.uavmetric.com",
+      "custom_domain": true
+    }
+  ]
 }
