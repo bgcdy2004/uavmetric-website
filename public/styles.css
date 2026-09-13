@@ -491,3 +491,145 @@ img{max-width:100%;height:auto}
   .aerial-photo-grid .aerial-photo:nth-child(10),
   .aerial-photo-grid .aerial-photo:nth-child(14){grid-column:1}
 }
+
+
+/* FINAL Walk Street header/footer lock */
+.case-study-page .case-header-brand{
+  display:flex !important;
+  align-items:center !important;
+  flex:0 0 auto !important;
+  width:220px !important;
+  height:72px !important;
+  overflow:visible !important;
+}
+
+.case-study-page .case-header-brand img{
+  display:block !important;
+  width:220px !important;
+  max-width:220px !important;
+  height:auto !important;
+  max-height:72px !important;
+  object-fit:contain !important;
+  object-position:left center !important;
+}
+
+.case-study-page .case-footer{
+  position:relative;
+  padding:32px 0 20px !important;
+  border-top:1px solid rgba(0,169,255,.4);
+  background:linear-gradient(180deg,#06131f,#020a12);
+  overflow:hidden;
+}
+
+.case-study-page .case-footer-grid{
+  position:relative;
+  z-index:2;
+  display:grid !important;
+  grid-template-columns:190px minmax(300px,1fr) minmax(180px,auto) !important;
+  align-items:center !important;
+  gap:34px !important;
+}
+
+.case-study-page .case-footer-brand{
+  display:block !important;
+  width:190px !important;
+  min-width:190px !important;
+  max-width:190px !important;
+}
+
+.case-study-page .case-footer-brand img{
+  display:block !important;
+  width:190px !important;
+  min-width:190px !important;
+  max-width:190px !important;
+  height:auto !important;
+  object-fit:contain !important;
+}
+
+.case-study-page .case-footer-message,
+.case-study-page .case-footer-contact{
+  display:flex !important;
+  flex-direction:column !important;
+  min-width:0 !important;
+  gap:5px !important;
+}
+
+.case-study-page .case-footer-message{
+  align-items:flex-start !important;
+  text-align:left !important;
+}
+
+.case-study-page .case-footer-contact{
+  align-items:flex-end !important;
+  text-align:right !important;
+  white-space:nowrap !important;
+}
+
+.case-study-page .case-footer-message strong{
+  display:block !important;
+  margin:0 !important;
+  color:#eef7fd !important;
+  font:700 1.18rem/1.15 "Barlow Condensed",Arial,sans-serif !important;
+  text-transform:uppercase !important;
+  letter-spacing:.01em !important;
+}
+
+.case-study-page .case-footer-message span,
+.case-study-page .case-footer-contact span{
+  display:block !important;
+  margin:0 !important;
+  color:#8094a4 !important;
+  font-size:.82rem !important;
+  line-height:1.45 !important;
+}
+
+.case-study-page .case-footer-contact a{
+  display:block !important;
+  color:#d9e8f2 !important;
+  font-size:.9rem !important;
+  line-height:1.4 !important;
+}
+
+.case-study-page .case-footer .footer-bottom{
+  position:relative !important;
+  z-index:2 !important;
+  display:block !important;
+  margin-top:22px !important;
+  padding-top:16px !important;
+  border-top:1px solid rgba(255,255,255,.07) !important;
+  color:#718594 !important;
+  font-size:.78rem !important;
+  line-height:1.4 !important;
+}
+
+@media(max-width:760px){
+  .case-study-page .case-footer-grid{
+    grid-template-columns:1fr !important;
+    gap:18px !important;
+    align-items:start !important;
+  }
+
+  .case-study-page .case-footer-contact{
+    align-items:flex-start !important;
+    text-align:left !important;
+    white-space:normal !important;
+  }
+
+  .case-study-page .case-header-brand{
+    width:185px !important;
+    height:62px !important;
+  }
+
+  .case-study-page .case-header-brand img{
+    width:185px !important;
+    max-width:185px !important;
+    max-height:62px !important;
+  }
+
+  .case-study-page .case-footer-brand,
+  .case-study-page .case-footer-brand img{
+    width:170px !important;
+    min-width:170px !important;
+    max-width:170px !important;
+  }
+}
