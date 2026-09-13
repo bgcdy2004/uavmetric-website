@@ -30,11 +30,8 @@ async function handleQuote(request, env) {
     const verification = await verifyResponse.json();
 
     if (!verification.success) {
-  console.error("Turnstile verification failed:", verification["error-codes"]);
-  return json({
-    error: "Security verification failed. Please refresh the page and try again."
-  }, 400);
-}
+      return json({ error: "Security verification failed. Please try again." }, 400);
+    }
 
     const services = form.getAll("service").filter(Boolean).join(", ") || "Not selected";
     const name = clean(form.get("name"));
