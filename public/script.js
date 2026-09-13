@@ -10,6 +10,34 @@ if (toggle && nav) {
     toggle.setAttribute('aria-expanded', 'false');
   }));
 }
+
+// Keep technical project work on the homepage and move the photography
+// portfolio to its own dedicated page.
+const isHomePage = location.pathname === '/' || location.pathname.endsWith('/index.html');
+if (isHomePage) {
+  const portfolio = document.getElementById('aerial-photography');
+  if (portfolio) portfolio.remove();
+
+  if (nav && !nav.querySelector('a[href="aerial-photography.html"]')) {
+    const contactLink = [...nav.querySelectorAll('a')].find(a => a.getAttribute('href') === '#contact');
+    const photographyLink = document.createElement('a');
+    photographyLink.href = 'aerial-photography.html';
+    photographyLink.textContent = 'Photography';
+    if (contactLink) nav.insertBefore(photographyLink, contactLink);
+    else nav.appendChild(photographyLink);
+  }
+
+  document.querySelectorAll('.service-detail').forEach(card => {
+    if (card.textContent.includes('AERIAL IMAGING')) {
+      const link = card.querySelector('.service-link');
+      if (link) {
+        link.href = 'aerial-photography.html';
+        link.textContent = 'View aerial photography →';
+      }
+    }
+  });
+}
+
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 
