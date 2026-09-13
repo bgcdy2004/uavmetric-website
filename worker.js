@@ -30,7 +30,6 @@ async function handleQuote(request, env) {
     const verification = await verifyResponse.json();
 
     if (!verification.success) {
-      if (!verification.success) {
   const codes = (verification["error-codes"] || []).join(", ");
   return json({
     error: `Security verification failed: ${codes || "unknown error"}`
