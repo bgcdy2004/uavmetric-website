@@ -71,3 +71,30 @@ if (quoteForm) {
     }
   });
 }
+
+
+// In-page gallery lightbox
+const galleryLinks = [...document.querySelectorAll('.aerial-photo-grid .aerial-photo')];
+const lightbox = document.getElementById('galleryLightbox');
+if (lightbox && galleryLinks.length) {
+  const image = lightbox.querySelector('.gallery-lightbox-image');
+  const close = lightbox.querySelector('.gallery-lightbox-close');
+  const prev = lightbox.querySelector('.gallery-lightbox-prev');
+  const next = lightbox.querySelector('.gallery-lightbox-next');
+  let current = 0;
+  const show = index => {
+    current = (index + galleryLinks.length) % galleryLinks.length;
+    const link = galleryLinks[current];
+    const thumb = link.querySelector('img');
+    image.src = link.getAttribute('href');
+    image.alt = thumb ? thumb.alt : 'UAVMetric portfolio photograph';
+  };
+  const open = index => { show(index); lightbox.classList.add('open'); lightbox.setAttribute('aria-hidden','false'); document.body.classList.add('lightbox-open'); close.focus(); };
+  const hide = () => { lightbox.classList.remove('open'); lightbox.setAttribute('aria-hidden','true'); document.body.classList.remove('lightbox-open'); image.src=''; };
+  galleryLinks.forEach((link,index)=>link.addEventListener('click',e=>{e.preventDefault();open(index);}));
+  close.addEventListener('click',hide);
+  prev.addEventListener('click',()=>show(current-1));
+  next.addEventListener('click',()=>show(current+1));
+  lightbox.addEventListener('click',e=>{if(e.target===lightbox)hide();});
+  document.addEventListener('keydown',e=>{if(!lightbox.classList.contains('open'))return;if(e.key==='Escape')hide();if(e.key==='ArrowLeft')show(current-1);if(e.key==='ArrowRight')show(current+1);});
+}
